@@ -1,5 +1,6 @@
 # information
 this is designed for exploits only, due to the nature of `hookfunction`
+
 getting started: just simply make an http request to the raw `src.lua` contents file
 
 ```lua
