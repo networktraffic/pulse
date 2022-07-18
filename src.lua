@@ -6,14 +6,16 @@ function pulse.new( closure )
 end
 
 function pulse:set( closure )
-    local backup = hookfunction( self.closure, closure )
-    self.backup = backup
-    
-    return backup
+    if not self.backup then
+        self.backup = hookfunction( self.closure, closure )
+    end
 end
 
 function pulse:undo( )
-    hookfunction( self.closure, self.backup ) 
+    if self.backup then
+        self.backup = nil
+        hookfunction( self.closure, self.backup ) 
+    end
 end
 
 return pulse
