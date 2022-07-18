@@ -10,7 +10,7 @@ pulse:undo( <void> )
 
 # usage
 ```lua
-local timer = loadstring( game:HttpGetAsync( 'https://raw.githubusercontent.com/networktraffic/pulse/main/src.lua' ) )( )
+local pulse = loadstring( game:HttpGetAsync( 'https://raw.githubusercontent.com/networktraffic/pulse/main/src.lua' ) )( )
 local example_hook = pulse.new( function( )
     print( 'hi!' )
 end )
