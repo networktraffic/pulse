@@ -7,14 +7,14 @@ end
 
 function pulse:set( closure )
     if not self.backup then
-        self.backup = hookfunction( self.closure, closure )
+        self.backup = replaceclosure( self.closure, closure )
     end
 end
 
 function pulse:undo( )
     if self.backup then
         self.backup = nil
-        hookfunction( self.closure, self.backup ) 
+        replaceclosure( self.closure, self.backup ) 
     end
 end
 
